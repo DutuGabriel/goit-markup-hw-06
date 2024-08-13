@@ -17,3 +17,23 @@ backdrop.addEventListener("click", (e) => {
 function toggleModal() {
   backdrop.classList.toggle("is-open");
 }
+
+const menubutton = document.querySelector(".menu-button");
+
+const menu = document.querySelector(".modal-menu-window");
+
+menubutton.addEventListener("click", toggleMenu);
+
+menu.addEventListener("click", (e) => {
+  const target = e.target.closest(".menu-close-button");
+
+  if (!target) {
+    return;
+  }
+
+  toggleMenu();
+});
+
+function toggleMenu() {
+  menu.classList.toggle("is-open");
+}
