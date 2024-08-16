@@ -34,9 +34,15 @@ img {
   height: auto;
 }
 
+@media screen and (min-resolution: 192dpi) {
+  .img {
+    width: 100%;
+  }
+}
+
 .section {
   padding: 100px 0;
-  margin: 0 auto;
+  min-width: 320px;
 }
 
 .container {
@@ -54,7 +60,7 @@ img {
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
   padding: 16px 0;
-  margin: 0 auto;
+  min-width: 320px;
 }
 
 .header-container {
@@ -338,7 +344,7 @@ img {
 .footer {
   background-color: #2e2f42;
   padding: 100px 0;
-  margin: 0 auto;
+  min-width: 320px;
 }
 
 .footer-container {
@@ -1113,6 +1119,8 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 8px;
   }
 
   .address-link {
