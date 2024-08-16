@@ -1,23 +1,3 @@
-const button = document.querySelector(".open-button");
-
-const backdrop = document.querySelector(".modal-container");
-
-button.addEventListener("click", toggleModal);
-
-backdrop.addEventListener("click", (e) => {
-  const target = e.target.closest(".close-button");
-
-  if (!target) {
-    return;
-  }
-
-  toggleModal();
-});
-
-function toggleModal() {
-  backdrop.classList.toggle("is-open");
-}
-
 const menubutton = document.querySelector(".menu-button");
 
 const menu = document.querySelector(".modal-menu-window");
@@ -36,4 +16,27 @@ menu.addEventListener("click", (e) => {
 
 function toggleMenu() {
   menu.classList.toggle("is-open");
+}
+
+const button = document.querySelector(".open-button");
+
+const backdrop = document.querySelector(".modal-container");
+
+button.addEventListener("click", (e) => {
+  e.preventDefault();
+  toggleModal();
+});
+
+backdrop.addEventListener("click", (e) => {
+  const target = e.target.closest(".close-button");
+
+  if (!target) {
+    return;
+  }
+
+  toggleModal();
+});
+
+function toggleModal() {
+  backdrop.classList.toggle("is-open");
 }
